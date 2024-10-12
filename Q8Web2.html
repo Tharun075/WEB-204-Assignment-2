@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback and Registration Form</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #f7b9cf, #a71269);
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+        h2, h3 {
+            margin-bottom: 15px;
+        }
+        #feedback-type {
+            width: 95%;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="number"],
+        input[type="email"],
+        input[type="password"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .button-container {
+            display: flex; /* Use Flexbox to center */
+            justify-content: center; /* Center the button */
+            margin-top: 20px; /* Space above the button */
+        }
+        button[type="submit"] {
+            background-color: #128825;
+            color: white;
+            padding: 10px 20px; /* Adjust padding for better appearance */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: auto; /* Change width to auto */
+        }
+        button[type="submit"]:hover {
+            background-color: #23b82f;
+        }
+        .checkbox-label {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Feedback Form</h1>
+    <div class="form-container">
+        <form id="feedback-form">
+            <label for="feedback-type" style="font-weight: bold;">Feedback Type:</label>
+            <select id="feedback-type" name="feedback-type" required>
+                <option value="">Select feedback type</option>
+                <option value="comment">Comment</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="issue">Report an Issue</option>
+            </select>
+            
+            <label for="user-input" style="font-weight: bold;">Message:</label>
+            <textarea id="user-input" name="user-input" rows="4"></textarea>
+            
+            <h3>Website Rating:</h3>
+            <label>
+                <input type="radio" name="rating" value="1" required> Excellent
+                <input type="radio" name="rating" value="2"> Good
+                <input type="radio" name="rating" value="3"> Average
+                <input type="radio" name="rating" value="4"> Poor
+            </label>
+        </form>
+
+        <h3>User Registration</h3>
+        <form id="user-registration">
+            <label for="age">Age (10-100):</label>
+            <input type="number" id="age" name="age" min="10" max="100" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="website">Website URL (optional):</label>
+            <input type="url" id="website" name="website">
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="terms" name="terms" required>
+                I accept the Terms and Conditions
+            </label>
+            
+            <div class="button-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
